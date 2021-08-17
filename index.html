@@ -14,8 +14,8 @@
 <body>
 
    <section>
-      <div class="container">
-         <h2 class="text-center mt-3">My shopping cart</h2>
+      <div class="container" id="container-1">
+         <h2 class="text-center mt-4">My shopping cart</h2>
          <div class="cart">
             <div class="col-md-12 col-lg-10 mx-auto" id="col">
                <div class="cart-item" id="element-1">
@@ -73,10 +73,13 @@
                   </div>
                </div>
                <div class="col-md-12 pt-4 pb-4">
-                  <button type="button" class="btn btn-success check-out">Check Out</button>
+                  <button type="button" class="btn btn-success check-out" id="checkout">Check Out</button>
                </div>
             </div>
          </div>
+      </div>
+      <div class="container" id="container-2">
+         <h1 class="checkout-heading text-center" id="checkout-text">Order placed. Total amount is <span class="total-style">$<span id="checkout-value"></span></span> </h1>
       </div>
    </section>
    <script src="/app.js"></script>

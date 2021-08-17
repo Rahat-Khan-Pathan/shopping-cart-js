@@ -2,9 +2,9 @@ body{
 	background: #fff;
 }
 .cart{
-	margin: 100px 0;
+	margin: 10px 0;
 	background-color: #F6F5FA;;
-	padding: 60px 0;
+	padding: 50px 0;
 }
 .total-price{
 	padding-bottom: 15px;
@@ -60,4 +60,18 @@ body{
 }
 .remove-item {
 	width: 100%;
+}
+#container-2 {
+	display: none;
+}
+.checkout-heading {
+	padding: 40px 20px;
+	background-color: #2FBE70;
+	margin-top: 20%;
+	color: white;
+}
+.total-style {
+	color: orangered;
+	font-weight: 800;
+	
 }

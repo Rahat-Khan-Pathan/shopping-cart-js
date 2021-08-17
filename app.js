@@ -1,3 +1,4 @@
+let totalAmount=0;
 function inputChange(inputId,val,check)
 {
     inputValue = parseInt(document.getElementById(inputId).value);
@@ -38,12 +39,13 @@ function editCalculations(id)
 function setTax()
 {
     let tax = (parseFloat(document.getElementById('sub-total').innerText)*12)/100;
-    document.getElementById('tax').innerText = tax;
+    document.getElementById('tax').innerText = tax.toFixed(2);
 }
 function setTotal()
 {
     let total = parseFloat(document.getElementById('sub-total').innerText) + parseFloat(document.getElementById('tax').innerText);
-    document.getElementById('total').innerText = total;
+    document.getElementById('total').innerText = total.toFixed(2);
+    totalAmount=total.toFixed(2);
 }
 function closeOption(event)
 {
@@ -61,8 +63,6 @@ document.getElementById('iphone-plus').addEventListener('click',function(event){
     setTotal();
 });
 document.getElementById('iphone-minus').addEventListener('click',function(event){
-    inputChange('iphone-input',-1,'minus');
-    setValue('iphone-value','iphone-input',1219);
     inputValue = parseInt(document.getElementById('iphone-input').value);
     if(inputValue>0)
     {
@@ -70,6 +70,8 @@ document.getElementById('iphone-minus').addEventListener('click',function(event)
         setTax();
         setTotal();
     }
+    inputChange('iphone-input',-1,'minus');
+    setValue('iphone-value','iphone-input',1219);
 })
 document.getElementById('case-plus').addEventListener('click',function(event){
     inputChange('case-input',1,'plus');
@@ -79,8 +81,6 @@ document.getElementById('case-plus').addEventListener('click',function(event){
     setTotal();
 });
 document.getElementById('case-minus').addEventListener('click',function(event){
-    inputChange('case-input',-1,'minus');
-    setValue('case-value','case-input',59);
     inputValue = parseInt(document.getElementById('case-input').value);
     if(inputValue>0)
     {
@@ -88,7 +88,24 @@ document.getElementById('case-minus').addEventListener('click',function(event){
         setTax();
         setTotal();
     }
+    inputChange('case-input',-1,'minus');
+    setValue('case-value','case-input',59);
 })
 document.getElementById('col').addEventListener('click',function(event){
     closeOption(event);
+})
+document.getElementById('checkout').addEventListener('click',function()
+{
+    if(totalAmount==0)
+    {
+        document.getElementById('container-1').style.display='none';
+        document.getElementById('container-2').style.display='block';
+        document.getElementById('checkout-text').innerText = 'Please select something first!'
+    }
+    else
+    {
+        document.getElementById('container-1').style.display='none';
+        document.getElementById('container-2').style.display='block';
+        document.getElementById('checkout-value').innerText=totalAmount;
+    }
 })
