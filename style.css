@@ -63,15 +63,28 @@ body{
 }
 #container-2 {
 	display: none;
+	background-color: #2FBE70;
+	padding: 40px 20px;
+	margin-top: 20%;
 }
 .checkout-heading {
-	padding: 40px 20px;
-	background-color: #2FBE70;
-	margin-top: 20%;
 	color: white;
 }
 .total-style {
 	color: orangered;
 	font-weight: 800;
-	
+}
+.back-button {
+	color: white;
+	font-size: 40px;
+	display: flex;
+	text-decoration: none;
+	justify-content: center;
+	margin-top: 20px;
+}
+.back-button:hover {
+	color: white;
+	position: relative;
+	right: 15px;
+	transition: 0.5s;
 }
