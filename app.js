@@ -37,7 +37,7 @@ function editCalculations(id)
 }
 function setTax()
 {
-    let tax = (parseFloat(document.getElementById('sub-total').innerText)*10)/100;
+    let tax = (parseFloat(document.getElementById('sub-total').innerText)*12)/100;
     document.getElementById('tax').innerText = tax;
 }
 function setTotal()
